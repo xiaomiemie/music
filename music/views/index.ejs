@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="renderer" content="webkit" >
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/index.css' />
+</head>
+<body>
+  <header>
+    <h1>
+      <%= title %></h1>
+   <ul class="changetype">
+     <li class="dot selectedbutton" data-type="dot">dot</li>
+     <li class="column" data-type="column">column</li>
+   </ul>
+    <p>
+      <span>Volume:</span>
+      <input id="volume" type="range" min='0' max='100' value="60"/>
+    </p>
+  </header>
+  <section>
+    <aside>
+    <p class="add">
+      播放本地音乐
+    </p>
+    <input type="file" style="visibility: hidden" class="addinput"/>
+      <ul id="list">
+        <% music.forEach(function(name){ %>
+        <li title="<%= name %>
+          ">
+          <%= name %></li>
+        <% }) %></ul>
+    </aside>
+    <div class="right" id="box"></div>
+  </section>
+
+  <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+  <script type="text/javascript" src="/javascripts/MusicVisualizer.js"></script>
+  <script type="text/javascript" src="/javascripts/index.js"></script>
+</body>
+</html>
